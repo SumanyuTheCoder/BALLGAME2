@@ -66,9 +66,9 @@ if(gameState === PLAY){
   createLog();
   createLog2();
 
-  if(keyDown("space") && ball.y >= 159) {
-    ball.velocityY = -12;
-  }
+  //if(keyDown("space") && ball.y >= 159) {
+   // ball.velocityY = -12;
+  //}
 
   ball.velocityY = ball.velocityY + 0.8
 
@@ -80,7 +80,7 @@ if(gameState === PLAY){
       gameState = END
   }
 
-  if((touches.length > 0 || keyDown("SPACE")) && ball.y  >= height-120) {
+  if((touches.length > 0 || keyDown("SPACE")) && ball.y  >= height-159) {
     BallSound.play( )
     ball.velocityY = -10;
      touches = [];
