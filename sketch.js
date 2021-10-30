@@ -62,6 +62,11 @@ function setup() {
 
 function draw() {
 
+  if((touches.length > 0 || keyDown("SPACE")) && ball.y  >= height-159) {
+    BallSound.play( )
+    ball.velocityY = -10;
+     touches = [];
+  
 if(gameState === PLAY){
   createLog();
   createLog2();
@@ -80,11 +85,10 @@ if(gameState === PLAY){
       gameState = END
   }
 
-  if((touches.length > 0 || keyDown("SPACE")) && ball.y  >= height-159) {
-    BallSound.play( )
-    ball.velocityY = -10;
-     touches = [];
+  
   }
+
+    ball.velocityY = ball.velocityY + 0.8
 
 }
 if(gameState === END ){
