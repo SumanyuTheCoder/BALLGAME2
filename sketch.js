@@ -64,8 +64,8 @@ function draw() {
 
   if((touches.length > 0 || keyDown("SPACE")) && ball.y  >= height-159) {
     BallSound.play()
-    ball.velocityY = -10;
-     touches = [];
+    ball.velocityY = -12;
+    touches = [];
   
   
 if(gameState === PLAY){
