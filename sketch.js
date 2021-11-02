@@ -66,7 +66,7 @@ function draw() {
     //jumpSound.play( )
     ball.velocityY = -10;
      touches = [];
-  }
+  
   
   ball.velocityY = ball.velocityY + 0.8
 
