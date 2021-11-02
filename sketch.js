@@ -98,6 +98,7 @@ if(gameState === END ){
   Loading.visible = true
   loadingwheel.visible = true
   loadingwheel.velocityX = 2;
+  
   if(loadingwheel.isTouching(wheelblocker)){
     gameState = PLAY;
     ground.velocityX = -6
@@ -115,8 +116,6 @@ if(gameState === END ){
   loadingwheel.collide(wheelblocker)
   //ball.collide(CreateLog)
 
-  let display = touches.length + ' touches';
-  text(display, 5, 10);
 
     
 
