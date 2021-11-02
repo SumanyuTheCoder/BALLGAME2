@@ -90,7 +90,7 @@ if(gameState === PLAY){
 
     ball.velocityY = ball.velocityY + 0.8
 
-}
+
 if(gameState === END ){
   CreateLog.velocityX = 0
   ground.velocityX = 0
