@@ -62,20 +62,21 @@ function setup() {
 
 function draw() {
 
-  if((touches.length > 0 || keyDown("SPACE")) ) {
-    BallSound.play()
-    ball.velocityY = -12;
-    touches = [];
+  if((touches.length > 0 || keyDown("SPACE")) && ball.y  >= height-120) {
+    //jumpSound.play( )
+    ball.velocityY = -10;
+     touches = [];
+  }
   
-  
+  ball.velocityY = ball.velocityY + 0.8
+
 if(gameState === PLAY){
   createLog();
   createLog2();
 
-  //if(keyDown("space") && ball.y >= 159) {
-   // ball.velocityY = -12;
-  //}
-
+  if(keyDown("space") && ball.y >= 159) {
+    ball.velocityY = -12;
+  }
   ball.velocityY = ball.velocityY + 0.8
 
   if (ground.x < 0){
@@ -87,10 +88,15 @@ if(gameState === PLAY){
   }
 
   
-  }
+ // if((touches.length > 0 || keyDown("SPACE")) && ball.y  >= height-159) {
+ //   BallSound.play( )
+ //   ball.velocityY = -10;
+ //    touches = [];
+  //}
+ //  ball.velocityY = ball.velocityY + 0.8
 
 
-
+}
 if(gameState === END ){
   CreateLog.velocityX = 0
   ground.velocityX = 0
@@ -98,7 +104,6 @@ if(gameState === END ){
   Loading.visible = true
   loadingwheel.visible = true
   loadingwheel.velocityX = 2;
-  
   if(loadingwheel.isTouching(wheelblocker)){
     gameState = PLAY;
     ground.velocityX = -6
@@ -115,9 +120,7 @@ if(gameState === END ){
   ball.collide(line)
   loadingwheel.collide(wheelblocker)
   //ball.collide(CreateLog)
-
-
-    
+                                 
 
     
   drawSprites();
@@ -129,7 +132,7 @@ function createLog(){
     log.x= Math.round(random(200,400));
     log.addImage(logIMG)
     log.velocityX = -2;
-    log.scale = 0.4;
+    log.scale = 0.3;
     CreateLog.add(log);
 
   }
@@ -141,7 +144,7 @@ function createLog2(){
     log1.x= Math.round(random(200,400));
     log1.addImage(logIMG2)
     log1.velocityX = -2;
-    log1.scale = 0.4;
+    log1.scale = 0.3;
     CreateLog.add(log1);
   }
 }
