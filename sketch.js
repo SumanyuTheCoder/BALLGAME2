@@ -66,7 +66,7 @@ function draw() {
     BallSound.play( )
     ball.velocityY = -10;
      touches = [];
-  
+  }
 if(gameState === PLAY){
   createLog();
   createLog2();
